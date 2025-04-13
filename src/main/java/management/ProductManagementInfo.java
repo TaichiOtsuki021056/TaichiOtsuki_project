@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductManagementInfo implements SearchProduct {
-	private final List<ProductManagement> productsList;
+	private final List<Product> productsList;
 
 	public ProductManagementInfo() {
 		this.productsList = new ArrayList<>();
 	}
 
 	// 商品追加
-	public void addProduct(ProductManagement product) {
+	public void addProduct(Product product) {
 		productsList.add(product);
 	}
 
 	// 商品情報取得（商品名から）
-	public ProductManagement getProductInfoByName(String name) {
-		for (ProductManagement product : productsList) {
+	public Product getProductInfoByName(String name) {
+		for (Product product : productsList) {
 			if (product.getName().equals(name)) {
 				return product;
 			}
@@ -26,8 +26,8 @@ public class ProductManagementInfo implements SearchProduct {
 	}
 
 	// 商品情報取得（IDから）
-	public ProductManagement getProductInfoById(int id) {
-		for (ProductManagement product : productsList) {
+	public Product getProductInfoById(int id) {
+		for (Product product : productsList) {
 			if (product.getId() == id) {
 				return product;
 			}
@@ -36,9 +36,9 @@ public class ProductManagementInfo implements SearchProduct {
 	}
 
 	// 商品検索
-	public List<ProductManagement> search(String name) {
-		List<ProductManagement> results = new ArrayList<>();
-		for (ProductManagement product : productsList) {
+	public List<Product> search(String name) {
+		List<Product> results = new ArrayList<>();
+		for (Product product : productsList) {
 			if (product.getName().contains(name)) {
 				results.add(product);
 			}
@@ -57,10 +57,9 @@ public class ProductManagementInfo implements SearchProduct {
 			System.out.println("商品が登録されていません。");
 		} else {
 			System.out.println("商品を全て表示します");
-			for (ProductManagement product : productsList) {
+			for (Product product : productsList) {
 				System.out.println(product);
 			}
 		}
 	}
 }
-

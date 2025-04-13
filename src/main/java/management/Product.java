@@ -1,12 +1,12 @@
 package management;
 
-public class ProductManagement {
+public class Product {
 	private int id;
 	private String name;
 	private int price;
 	private int stock;
 
-	public  ProductManagement(int id, String name, int price, int stock) {
+	public Product(int id, String name, int price, int stock) {
 
 		this.id = id;
 		this.name = name;
@@ -51,5 +51,3 @@ public class ProductManagement {
 	}
 
 }
-
-

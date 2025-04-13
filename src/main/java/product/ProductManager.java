@@ -3,7 +3,6 @@ package product;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ProductManager implements Searchable {
 	//Product.javaに対応したリスト"productsList"を作成
 	//紫のProductはジェネリクス
