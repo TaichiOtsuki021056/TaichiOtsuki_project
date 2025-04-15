@@ -53,7 +53,7 @@ public class PracticeDB {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} finally {
-			// 接続を閉じる
+
 			if (connection != null) {
 				try {
 					connection.close();
