@@ -25,13 +25,16 @@ public class Update {
 			System.out.println("在庫数を入力してください:");
 			int stock = Integer.parseInt(scanner.nextLine());
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			//VALUESはUPDATE文ではどのカラムを変更させるか明記しないといけない為、使用できない
+			//WHEREで条件を指定し、更新させる
 			String sql = "UPDATE products SET price = ?, stock = ? WHERE id = ?";
 
+			// try-with-resources
 			try (
 					Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
 
 					PreparedStatement pstmt = connection.prepareStatement(sql)) {
-
+				//上の？と連携しており1つ目の?が1になっている
 				pstmt.setInt(1, price);
 				pstmt.setInt(2, stock);
 				pstmt.setInt(3, id);

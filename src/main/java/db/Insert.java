@@ -29,6 +29,7 @@ public class Insert {
 			int category_id = Integer.parseInt(scanner.nextLine());
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			//VALUSEはInsert文で使用する
 			String sql = "INSERT INTO products(name, price, stock, category_id) VALUES (?, ?, ?, ?)";
 
 			// try-with-resources
